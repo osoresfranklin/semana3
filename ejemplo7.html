@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Edad</title>
+    <script>
+        function verificarEdad() {
+            const nombre = document.getElementById('nombre').value;
+            const edad = parseInt(document.getElementById('edad').value, 10);
+            if (isNaN(edad)) {
+                alert('Por favor, ingresa una edad válida.');
+                return;
+            }
+            let mensaje = '';
+            if (edad >= 18) {
+                mensaje = `nombre es mayor de edad.`;
+            } else {
+                mensaje = `nombre no es mayor de edad.`;
+            } 
+            document.getElementById('resultado').innerText = mensaje;
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificación de Edad</h1>
+    <form onsubmit="event.preventDefault(); verificarEdad();">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <br><br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" required>
+        <br><br>
+        <input type="submit" value="Verificar">
+    </form>
+    <p id="resultado"></p>
+</body>
+</html>

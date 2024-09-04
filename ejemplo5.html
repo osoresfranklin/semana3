@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día de la Semana</title>
+</head>
+<body>
+    <h2>Verificar los Días de la Semana</h2>
+    <label for="dia">Ingresa un número del 1 al 7:</label>
+    <input type="number" id="dia" min="1" max="7" placeholder="Ingresa un número">
+    <button onclick="mostrarDia()">Mostrar Día</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarDia() {
+            const dia = parseInt(document.getElementById("dia").value);
+            let nombreDia;
+
+            switch (dia) {
+                case 1:
+                    nombreDia = "Lunes";
+                    break;
+                case 2:
+                    nombreDia = "Martes";
+                    break;
+                case 3:
+                    nombreDia = "Miércoles";
+                    break;
+                case 4:
+                    nombreDia = "Jueves";
+                    break;
+                case 5:
+                    nombreDia = "Viernes";
+                    break;
+                case 6:
+                    nombreDia = "Sábado";
+                    break;
+                case 7:
+                    nombreDia = "Domingo";
+                    break;
+                default:     
+            }
+
+            document.getElementById("resultado").innerText = nombreDia;
+        }
+    </script>
+</body>
+</html>
